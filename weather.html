@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+          script-src 'self' https://api.openweathermap.org; 
+          img-src 'self' https://openweathermap.org https://source.unsplash.com;
+          style-src 'self' 'unsafe-inline';
+          connect-src 'self' https://api.openweathermap.org;">
+    <meta name="description" content="Weather forecast application">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://api.openweathermap.org">
+    <link rel="preconnect" href="https://source.unsplash.com">
+</head>
+<body>
+    <!-- Background elements -->
+    <div class="background" id="background"></div>
+    <div class="overlay"></div>
+    
+    <!-- Main content -->
+    <main class="weather-app">
+        <div class="container">
+            <header>
+                <h1>🌤️ Weather Forecast</h1>
+                <button id="logout-btn" class="logout-btn">Logout</button>
+            </header>
+
+            <section class="search-container">
+                <form id="weatherForm">
+                    <label for="cityInput" class="sr-only">Enter city name</label>
+                    <input 
+                        type="text" 
+                        id="cityInput" 
+                        placeholder="Enter city name" 
+                        aria-label="City name"
+                        autocomplete="off"
+                        required
+                    />
+                    <div class="button-group">
+                        <button type="submit" id="searchBtn">
+                            <span class="button-text">Get Weather</span>
+                            <span class="loading-spinner" hidden>
+                                <span class="sr-only">Loading...</span>
+                            </span>
+                        </button>
+                        <button type="button" id="locationBtn">
+                            📍 Use My Location
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="errorContainer" class="error-container" aria-live="assertive" hidden></section>
+            <section id="weatherResult" aria-live="polite"></section>
+            <section id="forecastResult" class="forecast-container" aria-live="polite"></section>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
