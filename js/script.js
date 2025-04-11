@@ -1,5 +1,5 @@
 const weatherApp = {
-    apiKey: "868ebca87bab8e0429ad2ef872303c81", // Replace with your actual API key
+    apiKey: "868ebca87bab8e0429ad2ef872303c81", 
     cacheExpiry: 15 * 60 * 1000, // 15 minutes cache
     maxImageRetries: 3,
     initialized: false,
